@@ -28,7 +28,7 @@ export default function Footer() {
                 style={{
                   width: "36px",
                   height: "36px",
-                  background: "#2563eb",
+                  background: "var(--blue-primary)",
                   borderRadius: "8px",
                   display: "flex",
                   alignItems: "center",
@@ -125,7 +125,7 @@ export default function Footer() {
                         textDecoration: "none",
                         transition: "color 0.15s",
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = "#2563eb")}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = "var(--blue-primary)")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "#475569")}
                     >
                       {link}

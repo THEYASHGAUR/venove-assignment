@@ -96,7 +96,7 @@ export default function FAQSection() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontStyle: "italic",
-                color: "#2563eb",
+                color: "var(--blue-primary)",
                 fontWeight: 700,
               }}
             >
@@ -114,7 +114,7 @@ export default function FAQSection() {
             <div
               key={i}
               style={{
-                background: openIndex === i ? "#2563eb" : "white",
+                background: openIndex === i ? "var(--blue-primary)" : "white",
                 borderRadius: "14px",
                 overflow: "hidden",
                 border: openIndex === i ? "none" : "1px solid #e2e8f0",

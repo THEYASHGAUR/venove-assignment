@@ -13,7 +13,7 @@ export default function WhyChooseUsSection() {
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
         <div
           style={{
-            background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 60%, #1e3a8a 100%)",
+            background: "linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-primary) 60%, var(--blue-dark) 100%)",
             borderRadius: "24px",
             overflow: "hidden",
             display: "grid",
@@ -84,7 +84,7 @@ export default function WhyChooseUsSection() {
                 alignItems: "center",
                 gap: "10px",
                 background: "white",
-                color: "#2563eb",
+                color: "var(--blue-primary)",
                 padding: "12px 20px",
                 borderRadius: "999px",
                 border: "none",
@@ -100,7 +100,7 @@ export default function WhyChooseUsSection() {
                   width: "26px",
                   height: "26px",
                   borderRadius: "50%",
-                  background: "#2563eb",
+                  background: "var(--blue-primary)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

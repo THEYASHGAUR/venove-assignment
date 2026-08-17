@@ -31,7 +31,7 @@ export default function TrustedBySection() {
             }}
           >
             Trusted by startups and Fortune{" "}
-            <span style={{ color: "#2563eb", fontWeight: 700 }}>500</span>{" "}
+            <span style={{ color: "var(--blue-primary)", fontWeight: 700 }}>500</span>{" "}
             companies
           </p>
           <div style={{ flex: 1, height: "1px", background: "#e2e8f0" }} />

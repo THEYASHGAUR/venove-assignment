@@ -50,7 +50,7 @@ export default function ServicesSection() {
     <section
       id="services"
       style={{
-        background: "#2563eb",
+        background: "var(--blue-primary)",
         padding: "80px 24px",
         position: "relative",
         overflow: "hidden",
@@ -136,6 +136,29 @@ export default function ServicesSection() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
+                minHeight: "205px",
+                cursor: "pointer",
+                transition: "background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#0f1024";
+                e.currentTarget.style.boxShadow = "0 24px 60px rgba(15,16,36,0.32)";
+                e.currentTarget.style.transform = "translateY(-6px)";
+                const title = e.currentTarget.querySelector<HTMLElement>("h3");
+                const description = e.currentTarget.querySelector<HTMLElement>("p");
+
+                if (title) title.style.color = "var(--blue-primary)";
+                if (description) description.style.color = "rgba(255,255,255,0.86)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.boxShadow = "none";
+                e.currentTarget.style.transform = "translateY(0)";
+                const title = e.currentTarget.querySelector<HTMLElement>("h3");
+                const description = e.currentTarget.querySelector<HTMLElement>("p");
+
+                if (title) title.style.color = "#0f172a";
+                if (description) description.style.color = "#64748b";
               }}
             >
               <div
@@ -143,7 +166,7 @@ export default function ServicesSection() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "50%",
-                  background: "#2563eb",
+                  background: "var(--blue-primary)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

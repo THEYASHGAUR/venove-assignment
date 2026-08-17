@@ -52,7 +52,7 @@ export default function PortfolioSection() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontStyle: "italic",
-                color: "#2563eb",
+                color: "var(--blue-primary)",
                 fontWeight: 700,
               }}
             >
@@ -88,8 +88,8 @@ export default function PortfolioSection() {
                 background: "white",
                 borderRadius: "16px",
                 overflow: "hidden",
-                border: project.highlighted ? "2px solid #2563eb" : "1px solid #e2e8f0",
-                boxShadow: project.highlighted ? "0 8px 24px rgba(37,99,235,0.1)" : "none",
+                border: project.highlighted ? "2px solid var(--blue-primary)" : "1px solid #e2e8f0",
+                boxShadow: project.highlighted ? "0 8px 24px rgba(var(--blue-primary-rgb), 0.1)" : "none",
                 cursor: "pointer",
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
               }}
@@ -100,7 +100,7 @@ export default function PortfolioSection() {
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = project.highlighted
-                  ? "0 8px 24px rgba(37,99,235,0.1)"
+                  ? "0 8px 24px rgba(var(--blue-primary-rgb), 0.1)"
                   : "none";
               }}
             >

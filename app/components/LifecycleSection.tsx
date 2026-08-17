@@ -12,7 +12,6 @@ const steps = [
   {
     label: "Build",
     description: "Bi-weekly sprints with full client visibility.",
-    highlighted: true,
   },
   {
     label: "Review",
@@ -30,39 +29,58 @@ const steps = [
 
 export default function LifecycleSection() {
   return (
-    <section style={{ background: "#f1f5f9", padding: "80px 24px", position: "relative", overflow: "hidden" }}>
-      {/* Subtle bg lines */}
+    <section style={{ 
+      backgroundColor: "#ffffff", 
+      padding: "100px 24px", 
+      position: "relative", 
+      overflow: "hidden" 
+    }}>
+      {/* Background gradients and grid */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "linear-gradient(rgba(148,163,184,0.1) 1px, transparent 1px), linear-gradient(to right, rgba(148,163,184,0.1) 1px, transparent 1px)",
+            "linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px), linear-gradient(to right, rgba(148,163,184,0.06) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
           pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "500px",
+          height: "500px",
+          background: "radial-gradient(circle at 0% 100%, rgba(219, 234, 254, 0.4) 0%, transparent 60%)",
+          pointerEvents: "none",
+          zIndex: 0,
         }}
       />
 
       <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-        {/* Two-column header */}
+        {/* Header */}
         <div
           style={{
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "space-between",
-            alignItems: "flex-start",
+            alignItems: "flex-end",
             gap: "32px",
-            marginBottom: "56px",
+            marginBottom: "80px",
           }}
         >
           <div>
             <h2
               style={{
-                fontSize: "clamp(28px, 4vw, 44px)",
-                fontWeight: 800,
+                fontSize: "clamp(32px, 4vw, 48px)",
+                fontWeight: 700,
                 color: "#0f172a",
-                lineHeight: 1.2,
+                lineHeight: 1.15,
                 letterSpacing: "-0.02em",
+                margin: 0,
               }}
             >
               The Lifecycle of a
@@ -71,7 +89,7 @@ export default function LifecycleSection() {
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontStyle: "italic",
-                  color: "#2563eb",
+                  color: "var(--blue-primary, #168bf2)",
                   fontWeight: 700,
                 }}
               >
@@ -79,13 +97,15 @@ export default function LifecycleSection() {
               </em>
             </h2>
           </div>
-          <div style={{ maxWidth: "420px" }}>
+          <div style={{ maxWidth: "460px" }}>
             <p
               style={{
-                color: "#64748b",
-                fontSize: "16px",
-                lineHeight: 1.7,
+                color: "#475569",
+                fontSize: "15px",
+                lineHeight: 1.6,
                 textAlign: "right",
+                margin: 0,
+                fontWeight: 500,
               }}
             >
               How every engagement moves from discovery to sustained delivery — with velocity that builds over time, not plateaus.
@@ -94,26 +114,11 @@ export default function LifecycleSection() {
         </div>
 
         {/* Process steps */}
-        <div style={{ position: "relative" }}>
-          {/* Connecting dotted line */}
-          <div
-            style={{
-              position: "absolute",
-              top: "36px",
-              left: "10%",
-              right: "10%",
-              height: "2px",
-              borderTop: "2px dashed #94a3b8",
-              zIndex: 0,
-            }}
-            className="process-line"
-          />
-
+        <div className="lifecycle-container" style={{ position: "relative", paddingTop: "24px" }}>
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(6, 1fr)",
-              gap: "12px",
+              gap: "24px",
               position: "relative",
               zIndex: 1,
             }}
@@ -123,68 +128,100 @@ export default function LifecycleSection() {
               <div
                 key={i}
                 style={{
+                  position: "relative",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  gap: "8px",
                 }}
               >
-                {/* Arrow pointer above card (for steps 2+) */}
-                {i > 0 && (
-                  <div
-                    style={{
+                {/* Connecting Arch Line (Hidden on smaller screens via CSS) */}
+                {i < steps.length - 1 && (
+                  <div className="arch-connector" style={{
+                    position: "absolute",
+                    left: "50%",
+                    width: "calc(100% + 24px)", // 100% of card + gap
+                    top: "-24px",
+                    height: "24px",
+                    border: "1.5px dashed #cbd5e1",
+                    borderBottom: "none",
+                    borderTopLeftRadius: "16px",
+                    borderTopRightRadius: "16px",
+                    zIndex: 0,
+                  }}>
+                    {/* Blue Arrow on the Arch */}
+                    <div style={{
+                      position: "absolute",
+                      top: "-5px",
+                      left: "50%",
+                      transform: "translateX(-50%)",
                       width: 0,
                       height: 0,
-                      borderLeft: "8px solid transparent",
-                      borderRight: "8px solid transparent",
-                      borderBottom: `8px solid ${step.highlighted ? "#2563eb" : "#e2e8f0"}`,
-                      marginBottom: "-4px",
-                    }}
-                  />
+                      borderTop: "4px solid transparent",
+                      borderBottom: "4px solid transparent",
+                      borderLeft: "6px solid var(--blue-primary, #168bf2)",
+                    }} />
+                  </div>
                 )}
 
-                {/* Step card */}
+                {/* Step Card */}
                 <div
+                  className="lifecycle-card"
                   style={{
                     width: "100%",
+                    backgroundColor: "#ffffff",
                     borderRadius: "12px",
-                    border: step.highlighted ? "2px solid #2563eb" : "1px solid #e2e8f0",
-                    background: step.highlighted ? "#eff6ff" : "white",
-                    padding: "16px 12px",
+                    border: "1.5px solid #e2e8f0",
+                    padding: "16px 12px 24px",
                     textAlign: "center",
                     position: "relative",
+                    zIndex: 2,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    transition: "all 0.25s ease",
+                    cursor: "pointer",
                   }}
                 >
-                  {/* Dot indicator */}
+                  {/* Node Indicator */}
                   <div
                     style={{
                       position: "absolute",
-                      top: "-10px",
+                      top: "-8px",
                       left: "50%",
                       transform: "translateX(-50%)",
-                      width: "14px",
-                      height: "14px",
+                      width: "16px",
+                      height: "16px",
                       borderRadius: "50%",
-                      background: "white",
-                      border: `2.5px solid ${step.highlighted ? "#2563eb" : "#94a3b8"}`,
+                      background: "#ffffff",
+                      border: "3px solid var(--blue-primary, #168bf2)",
+                      zIndex: 3,
                     }}
                   />
+                  
+                  {/* Title Pill */}
                   <div
                     style={{
+                      backgroundColor: "#dbeafe",
+                      color: "#0f172a",
+                      padding: "6px 16px",
+                      borderRadius: "8px",
                       fontSize: "15px",
-                      fontWeight: 700,
-                      color: step.highlighted ? "#1d4ed8" : "#0f172a",
-                      marginBottom: "6px",
-                      marginTop: "8px",
+                      fontWeight: 600,
+                      marginTop: "12px",
+                      marginBottom: "12px",
+                      width: "100%",
                     }}
                   >
                     {step.label}
                   </div>
+                  
+                  {/* Description */}
                   <div
                     style={{
-                      fontSize: "12px",
+                      fontSize: "13px",
                       color: "#64748b",
                       lineHeight: 1.5,
+                      fontWeight: 400,
                     }}
                   >
                     {step.description}
@@ -197,17 +234,36 @@ export default function LifecycleSection() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
+        .steps-grid {
+          grid-template-columns: repeat(6, 1fr);
+        }
+        
+        .lifecycle-card:hover {
+          border-color: var(--blue-primary, #168bf2) !important;
+          box-shadow: 0 10px 25px -5px rgba(22, 139, 242, 0.15), 0 4px 10px -2px rgba(22, 139, 242, 0.05);
+          transform: translateY(-2px);
+        }
+
+        @media (max-width: 1024px) {
           .steps-grid {
             grid-template-columns: repeat(3, 1fr) !important;
+            gap: 32px !important;
           }
-          .process-line {
+          .arch-connector {
             display: none !important;
           }
         }
-        @media (max-width: 500px) {
+
+        @media (max-width: 640px) {
           .steps-grid {
             grid-template-columns: repeat(2, 1fr) !important;
+            gap: 24px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .steps-grid {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>

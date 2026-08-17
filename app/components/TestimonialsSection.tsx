@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
               style={{
                 fontFamily: "'Playfair Display', serif",
                 fontStyle: "italic",
-                color: "#2563eb",
+                color: "var(--blue-primary)",
                 fontWeight: 700,
               }}
             >
@@ -99,7 +99,7 @@ export default function TestimonialsSection() {
                 bottom: "20px",
                 left: "20px",
                 right: "20px",
-                background: "#2563eb",
+                background: "var(--blue-primary)",
                 borderRadius: "12px",
                 padding: "14px 18px",
               }}
@@ -181,7 +181,7 @@ export default function TestimonialsSection() {
                   borderRadius: "50%",
                   border: "none",
                   cursor: "pointer",
-                  background: "#2563eb",
+                  background: "var(--blue-primary)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

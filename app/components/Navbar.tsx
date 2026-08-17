@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <header
       style={{
-        position: "sticky",
+        position: "relative",
         top: 0,
         zIndex: 50,
         background: "rgba(255,255,255,0.95)",
@@ -35,7 +35,7 @@ export default function Navbar() {
             style={{
               width: "42px",
               height: "42px",
-              background: "#2563eb",
+              background: "var(--blue-primary)",
               borderRadius: "10px",
               display: "flex",
               alignItems: "center",
@@ -50,14 +50,14 @@ export default function Navbar() {
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: "17px", color: "#0f172a", lineHeight: "1.2" }}>Digital Liquid</div>
-            <div style={{ fontSize: "11px", color: "#94a3b8", lineHeight: "1" }}>Design That Moves With You</div>
+            <div style={{ fontSize: "8px", color: "#94a3b8", lineHeight: "2", marginLeft: "10px" }}>Design That Moves With You</div>
           </div>
         </Link>
 
         {/* Desktop Nav */}
         <div style={{ display: "flex", alignItems: "center", gap: "32px", flex: 1, justifyContent: "center" }} className="hidden-mobile">
           {[
-            { label: "Services", hasChevron: true },
+            { label: "Services", hasChevron: false },
             { label: "Hire", hasChevron: false },
             { label: "For Agencies", hasChevron: false },
             { label: "Industries", hasChevron: false },
@@ -75,7 +75,7 @@ export default function Navbar() {
                 fontSize: "15px",
                 fontWeight: 500,
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#2563eb")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--blue-primary)")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#374151")}
             >
               {item.label}
@@ -96,7 +96,7 @@ export default function Navbar() {
               display: "flex",
               alignItems: "center",
               gap: "8px",
-              background: "#2563eb",
+              background: "var(--blue-primary)",
               color: "white",
               padding: "10px 20px",
               borderRadius: "999px",
@@ -105,11 +105,11 @@ export default function Navbar() {
               textDecoration: "none",
               whiteSpace: "nowrap",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#1d4ed8")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#2563eb")}
+            onMouseEnter={(e) => (e.currentTarget.style.background = "var(--blue-dark)")}
+            onMouseLeave={(e) => (e.currentTarget.style.background = "var(--blue-primary)")}
           >
             Get Started
-            <span
+            {/* <span
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -123,7 +123,7 @@ export default function Navbar() {
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
                 <path d="M7 17L17 7M7 7h10v10" />
               </svg>
-            </span>
+            </span> */}
           </Link>
         </div>
 
@@ -184,7 +184,7 @@ export default function Navbar() {
             style={{
               display: "inline-flex",
               marginTop: "16px",
-              background: "#2563eb",
+              background: "var(--blue-primary)",
               color: "white",
               padding: "12px 24px",
               borderRadius: "999px",

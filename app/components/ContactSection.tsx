@@ -148,7 +148,7 @@ export default function ContactSection() {
                     width: "200px",
                     height: "200px",
                     borderRadius: "50% 50% 0 0",
-                    background: "#2563eb",
+                    background: "var(--blue-primary)",
                   }}
                 />
                 <div
@@ -220,7 +220,7 @@ export default function ContactSection() {
                     style={{
                       width: "100%",
                       padding: "14px 16px",
-                      border: "1.5px solid #2563eb",
+                      border: "1.5px solid var(--blue-primary)",
                       borderRadius: "10px",
                       fontSize: "14px",
                       outline: "none",
@@ -436,7 +436,7 @@ export default function ContactSection() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "8px",
-                    background: "#2563eb",
+                    background: "var(--blue-primary)",
                     color: "white",
                     padding: "14px 28px",
                     borderRadius: "999px",
@@ -445,8 +445,8 @@ export default function ContactSection() {
                     fontWeight: 700,
                     fontSize: "15px",
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "#1d4ed8")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "#2563eb")}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--blue-dark)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--blue-primary)")}
                 >
                   Request Availability
                 </button>
