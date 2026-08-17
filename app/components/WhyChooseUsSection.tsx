@@ -1,39 +1,39 @@
 "use client";
+import Image from "next/image";
 
 const stats = [
   { value: "2500+", label: "Projects Delivered" },
-  { value: "98%", label: "On-time Delivery" },
   { value: "97%", label: "Client Retention Rate" },
+  { value: "98%", label: "On-time Delivery" },
   { value: "24/7", label: "Delivery Support" },
 ];
 
 export default function WhyChooseUsSection() {
   return (
-    <section style={{ background: "#f8fafc", padding: "80px 24px" }}>
+    <section style={{ background: "#ffffff", padding: "100px 24px" }}>
       <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
         <div
           style={{
-            background: "linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-primary) 60%, var(--blue-dark) 100%)",
+            background: "linear-gradient(90deg, #2a4ca2 0%, #1c3677 100%)",
             borderRadius: "24px",
             overflow: "hidden",
-            display: "grid",
-            gridTemplateColumns: "1fr auto",
-            minHeight: "320px",
             position: "relative",
+            display: "flex",
+            minHeight: "420px",
           }}
-          className="why-choose-grid"
+          className="why-choose-banner"
         >
-          {/* Dark right portion */}
+          {/* Dark right portion (large circle) */}
           <div
             style={{
               position: "absolute",
-              right: 0,
-              top: 0,
-              bottom: 0,
-              width: "45%",
-              background: "#0f172a",
-              borderRadius: "0 24px 24px 0",
-              clipPath: "ellipse(100% 100% at 100% 50%)",
+              right: "-15%",
+              top: "-40%",
+              width: "800px",
+              height: "800px",
+              background: "#081226",
+              borderRadius: "50%",
+              zIndex: 0,
             }}
             className="why-choose-right-bg"
           />
@@ -41,37 +41,45 @@ export default function WhyChooseUsSection() {
           {/* Left content */}
           <div
             style={{
-              padding: "48px",
+              padding: "72px 80px",
               position: "relative",
               zIndex: 1,
+              flex: 1,
+              maxWidth: "700px",
             }}
+            className="why-choose-content"
           >
             <h2
               style={{
-                fontSize: "clamp(24px, 3.5vw, 38px)",
-                fontWeight: 800,
+                fontSize: "clamp(32px, 4vw, 44px)",
+                fontWeight: 600,
                 color: "white",
                 lineHeight: 1.2,
-                letterSpacing: "-0.02em",
-                marginBottom: "16px",
+                letterSpacing: "-0.01em",
+                marginBottom: "20px",
+                margin: 0,
               }}
             >
+              Why{" "}
               <em
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   fontStyle: "italic",
+                  fontWeight: 600,
                 }}
               >
-                Why Choose Us?
-              </em>
+                Choose
+              </em>{" "}
+              Us?
             </h2>
             <p
               style={{
                 color: "rgba(255,255,255,0.85)",
-                fontSize: "15px",
-                lineHeight: 1.7,
-                maxWidth: "420px",
-                marginBottom: "28px",
+                fontSize: "16px",
+                lineHeight: 1.6,
+                maxWidth: "480px",
+                marginBottom: "40px",
+                marginTop: "16px",
               }}
             >
               Our methodology is built on a decade of refined enterprise delivery — so we never miss a deadline or compromise on quality.
@@ -82,44 +90,52 @@ export default function WhyChooseUsSection() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "10px",
+                gap: "16px",
                 background: "white",
-                color: "var(--blue-primary)",
-                padding: "12px 20px",
+                color: "var(--blue-primary, #168bf2)",
+                padding: "8px 8px 8px 24px",
                 borderRadius: "999px",
                 border: "none",
                 cursor: "pointer",
-                fontWeight: 700,
-                fontSize: "14px",
-                marginBottom: "36px",
+                fontWeight: 600,
+                fontSize: "15px",
+                marginBottom: "48px",
               }}
             >
               Learn More
               <span
                 style={{
-                  width: "26px",
-                  height: "26px",
+                  width: "32px",
+                  height: "32px",
                   borderRadius: "50%",
-                  background: "var(--blue-primary)",
+                  background: "var(--blue-primary, #168bf2)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </span>
             </button>
 
-            {/* Stats 2x2 grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 32px" }}>
+            {/* Stats Grid */}
+            <div 
+              style={{ 
+                display: "grid", 
+                gridTemplateColumns: "auto auto", 
+                gap: "16px 48px",
+                width: "max-content",
+              }}
+              className="stats-grid"
+            >
               {stats.map((stat, i) => (
-                <div key={i} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2">
+                <div key={i} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e2e8f0" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span style={{ color: "rgba(255,255,255,0.9)", fontSize: "14px", fontWeight: 500 }}>
+                  <span style={{ color: "#e2e8f0", fontSize: "14px", fontWeight: 400 }}>
                     {stat.value} {stat.label}
                   </span>
                 </div>
@@ -127,36 +143,33 @@ export default function WhyChooseUsSection() {
             </div>
           </div>
 
-          {/* Right image - person with laptop */}
+          {/* Right image - cutout person */}
           <div
             style={{
-              width: "340px",
-              position: "relative",
+              position: "absolute",
+              right: "40px",
+              bottom: 0,
+              width: "420px",
+              height: "100%",
               zIndex: 1,
               display: "flex",
               alignItems: "flex-end",
               justifyContent: "center",
-              overflow: "hidden",
             }}
             className="why-choose-img"
           >
-            <div
+            {/* Note: In a real app, replace this URL with the transparent PNG cutout from your assets */}
+            <Image
+              src="https://www.pngarts.com/files/3/Businessman-Transparent-Image.png" 
+              alt="Professional business man"
+              width={420}
+              height={500}
               style={{
                 width: "100%",
-                height: "100%",
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?w=400&q=80')",
-                backgroundSize: "cover",
-                backgroundPosition: "center top",
-                position: "absolute",
-                inset: 0,
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(to right, rgba(15,23,42,0.5), transparent)",
+                height: "auto",
+                maxHeight: "110%", // allows it to peek slightly if needed
+                objectFit: "contain",
+                objectPosition: "bottom",
               }}
             />
           </div>
@@ -164,15 +177,30 @@ export default function WhyChooseUsSection() {
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
-          .why-choose-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .why-choose-img {
-            display: none !important;
+        @media (max-width: 900px) {
+          .why-choose-banner {
+            flex-direction: column !important;
+            padding-bottom: 300px !important; /* space for image */
           }
           .why-choose-right-bg {
-            display: none !important;
+            top: auto !important;
+            bottom: -20% !important;
+            right: -20% !important;
+            width: 600px !important;
+            height: 600px !important;
+          }
+          .why-choose-img {
+            right: 50% !important;
+            transform: translateX(50%) !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .why-choose-content {
+            padding: 48px 24px !important;
+          }
+          .stats-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
           }
         }
       `}</style>

@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-
+import Image from "next/image";
 const logos = [
   "GOIPSUM",
   "Logoipsum",
@@ -179,10 +179,14 @@ export default function HeroSection() {
               zIndex: 1,
             }}
           >
-            <svg width="80" height="90" viewBox="0 0 80 90" fill="none">
-              <path d="M10 80 Q30 40 65 15" stroke="#0f172a" strokeWidth="1.5" fill="none" />
-              <path d="M65 15 L55 25 M65 15 L75 22" stroke="#0f172a" strokeWidth="1.5" strokeLinecap="round" />
-              <circle cx="10" cy="80" r="5" fill="#0f172a" opacity="0.5" />
+            <svg width="80" height="90" viewBox="0 0 100 100" fill="none" style={{ transform: "rotate(15deg)" }}>
+              <path 
+                d="M10 90 Q15 60 40 65 Q55 70 50 85 Q40 105 20 85 Q0 60 40 40 Q70 20 90 10 M90 10 L75 10 M90 10 L85 25" 
+                stroke="#0f172a" 
+                strokeWidth="2.5" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+              />
             </svg>
           </div>
 
