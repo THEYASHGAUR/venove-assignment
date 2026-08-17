@@ -157,11 +157,17 @@ export default function Navbar() {
       {mobileOpen && (
         <div
           style={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            right: 0,
             background: "white",
             borderTop: "1px solid #e2e8f0",
             padding: "16px 24px 24px",
+            boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
+            zIndex: 40,
           }}
-          className="show-mobile"
+          className="mobile-menu"
         >
           {["Services", "Hire", "For Agencies", "Industries", "Company"].map((item) => (
             <Link
@@ -203,12 +209,14 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
+          .mobile-menu { display: flex !important; flex-direction: column !important; }
           .nav-container { padding: 0 16px !important; gap: 16px !important; }
           .logo-subtext { display: none !important; }
         }
         @media (min-width: 769px) {
           .show-mobile { display: none !important; }
           .hidden-mobile { display: flex !important; }
+          .mobile-menu { display: none !important; }
         }
       `}</style>
     </header>
