@@ -28,6 +28,7 @@ export default function Navbar() {
           justifyContent: "space-between",
           gap: "32px",
         }}
+        className="nav-container"
       >
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", flexShrink: 0 }}>
@@ -50,7 +51,7 @@ export default function Navbar() {
           </div>
           <div>
             <div style={{ fontWeight: 700, fontSize: "17px", color: "#0f172a", lineHeight: "1.2" }}>Digital Liquid</div>
-            <div style={{ fontSize: "8px", color: "#94a3b8", lineHeight: "2", marginLeft: "10px" }}>Design That Moves With You</div>
+            <div style={{ fontSize: "8px", color: "#94a3b8", lineHeight: "2", marginLeft: "10px" }} className="logo-subtext">Design That Moves With You</div>
           </div>
         </Link>
 
@@ -202,6 +203,8 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .hidden-mobile { display: none !important; }
           .show-mobile { display: flex !important; }
+          .nav-container { padding: 0 16px !important; gap: 16px !important; }
+          .logo-subtext { display: none !important; }
         }
         @media (min-width: 769px) {
           .show-mobile { display: none !important; }

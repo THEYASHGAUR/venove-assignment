@@ -294,6 +294,7 @@ export default function HeroSection() {
           position: "relative",
           zIndex: 2,
         }}
+        className="hero-video-container"
       >
         <div
           style={{
@@ -459,6 +460,13 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-video-container {
+            margin-top: -60px !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -46,7 +46,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p style={{ color: "#475569", fontSize: "14px", lineHeight: 1.7, marginBottom: "24px", maxWidth: "240px" }}>
+            <p style={{ color: "#475569", fontSize: "14px", lineHeight: 1.7, marginBottom: "24px", maxWidth: "240px" }} className="footer-brand-text">
               Architectural excellence for the digital enterprise. Built for performance, designed for clarity.
             </p>
 
@@ -148,6 +148,7 @@ export default function Footer() {
             flexWrap: "wrap",
             gap: "12px",
           }}
+          className="footer-bottom"
         >
           <span style={{ color: "#64748b", fontSize: "13px" }}>
             © 2025 Digital Liquid. Built for structural clarity.
@@ -168,10 +169,17 @@ export default function Footer() {
           .footer-links-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
+          .footer-brand-text {
+            max-width: 100% !important;
+          }
         }
         @media (max-width: 500px) {
           .footer-links-grid {
             grid-template-columns: 1fr !important;
+          }
+          .footer-bottom {
+            flex-direction: column !important;
+            align-items: flex-start !important;
           }
         }
       `}</style>

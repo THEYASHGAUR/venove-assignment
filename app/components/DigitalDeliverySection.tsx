@@ -126,16 +126,21 @@ export default function DigitalDeliverySection() {
         </div>
 
         {/* Tab switcher */}
-        <div style={{ display: "flex", justifyContent: "center", marginBottom: "36px" }}>
+        <div style={{ display: "flex", justifyContent: "center", marginBottom: "36px", width: "100%" }}>
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               background: "#f1f5f9",
               borderRadius: "9999px",
               padding: "5px",
               gap: "4px",
               border: "1px solid #e2e8f0",
+              maxWidth: "100%",
+              overflowX: "auto",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
             }}
+            className="tab-switcher"
           >
             {tabs.map((tab) => (
               <button
@@ -183,6 +188,7 @@ export default function DigitalDeliverySection() {
               flexDirection: "column",
               justifyContent: "center",
             }}
+            className="digital-delivery-text"
           >
             <h3
               style={{
@@ -336,12 +342,18 @@ export default function DigitalDeliverySection() {
           background: #147ad6 !important;
           transform: translateY(-1px);
         }
+        .tab-switcher::-webkit-scrollbar {
+          display: none;
+        }
         @media (max-width: 900px) {
           .digital-delivery-card {
             grid-template-columns: 1fr !important;
           }
           .digital-delivery-img-container {
             padding: 0 20px 20px 20px !important;
+          }
+          .digital-delivery-text {
+            padding: 32px 24px 24px 24px !important;
           }
         }
       `}</style>
